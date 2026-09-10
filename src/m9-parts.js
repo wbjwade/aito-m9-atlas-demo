@@ -10,12 +10,14 @@ export const CATEGORIES = [
 ];
 export const allVisible = () =>
   Object.fromEntries(CATEGORIES.map((c) => [c.id, true]));
+const assetBase = import.meta.env?.BASE_URL ?? "/";
+
 export const vehicle = {
   title: "AITO M9 Atlas",
   name: "问界 M9",
   caption: "AITO M9 · STRUCTURE EXPLORER",
-  modelUrl: "/models/aito-m9.glb",
-  licenseUrl: "/models/aito-m9/license.txt",
+  modelUrl: `${assetBase}models/aito-m9.glb`,
+  licenseUrl: `${assetBase}models/aito-m9/license.txt`,
 };
 export const partKey = (name) => name.replace(/^gsraitom9_/, "");
 export function classifyM9Part(name) {
